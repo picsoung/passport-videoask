@@ -1,25 +1,25 @@
 {
-  "name": "passport-typeform",
-  "version": "0.0.7",
-  "description": "Typeform authentication strategy for Passport.",
+  "name": "passport-videoask",
+  "version": "0.0.1",
+  "description": "Videoask authentication strategy for Passport.",
   "keywords": [
     "passport",
-    "typeform",
+    "videoask",
     "auth",
     "authn",
     "authentication",
     "identity"
   ],
   "author": {
-    "name": "Anabella Spinelli",
-    "email": "anabellaspinelli@gmail.com"
+    "name": "Nicolas Grenié",
+    "email": "nicolas.grenie@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/anabellaspinelli/passport-typeform.git"
+    "url": "https://github.com/picsoung/passport-videoask.git"
   },
   "bugs": {
-    "url": "http://github.com/anabellaspinelli/passport-typeform/issues"
+    "url": "http://github.com/picsoung/passport-videoask/issues"
   },
   "license": "MIT",
   "licenses": [
@@ -37,7 +37,7 @@
     "chai": "2.x.x",
     "chai-passport-strategy": "1.x.x",
     "make-node": "0.3.x",
-    "mocha": "1.x.x",
+    "mocha": "^6.2.2",
     "proxyquire": "1.4.x"
   },
   "engines": {

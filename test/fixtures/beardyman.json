@@ -1,5 +1,6 @@
 {
-  "alias": "beardyman",
+  "user_id": "aaaa-bbbb-cccc-dddd-eeee",
+  "username": "beardyman",
   "email": "beardy@typeform.com",
-  "language": "en"
+  "marketing_communications_opt_in": false
 }

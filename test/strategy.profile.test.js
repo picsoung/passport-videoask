@@ -1,21 +1,21 @@
 /* global describe, it, before, expect */
 /* jshint expr: true */
 
-var TypeformStrategy = require('../lib/strategy')
+var VideoAskStrategy = require('../lib/strategy')
 
 describe('Strategy#userProfile', function () {
   describe('fetched from default endpoint', function () {
-    var strategy = new TypeformStrategy(
+    var strategy = new VideoAskStrategy(
       {
         clientID: 'ABC123',
         clientSecret: 'secret',
-        scope: [ 'accounts:read' ]
+        scope: [ 'profile' ]
       },
       function () { }
     )
 
     strategy._oauth2.get = function (url, accessToken, callback) {
-      if (url != 'https://api.typeform.com/me') {
+      if (url != 'https://api.videoask.com/me') {
         return callback(new Error('wrong url argument'))
       }
       if (accessToken != 'token') {
@@ -23,7 +23,7 @@ describe('Strategy#userProfile', function () {
       }
 
       var body =
-        '{ "alias": "beardyman", "language": "en", "email": "beardy@typeform.com" }'
+        '{ "username": "beardyman", "user_id": "aaaa-bbbb-cccc-dddd-eeee", "email": "beardy@typeform.com" }'
       callback(null, body, undefined)
     }
 
@@ -40,11 +40,11 @@ describe('Strategy#userProfile', function () {
     })
 
     it('should parse profile', function () {
-      expect(profile.provider).to.equal('typeform')
+      expect(profile.provider).to.equal('videoask')
 
       expect(profile.email).to.equal('beardy@typeform.com')
-      expect(profile.language).to.equal('en')
-      expect(profile.alias).to.equal('beardyman')
+      expect(profile.user_id).to.equal('aaaa-bbbb-cccc-dddd-eeee')
+      expect(profile.username).to.equal('beardyman')
     })
 
     it('should set raw property', function () {
@@ -57,7 +57,7 @@ describe('Strategy#userProfile', function () {
   }) // fetched from default endpoint
 
   describe('fetched without account scope', function () {
-    var strategy = new TypeformStrategy(
+    var strategy = new VideoAskStrategy(
       {
         clientID: 'ABC123',
         clientSecret: 'secret'
@@ -86,11 +86,11 @@ describe('Strategy#userProfile', function () {
   }) // fetched from default endpoint
 
   describe('error caused by invalid token', function () {
-    var strategy = new TypeformStrategy(
+    var strategy = new VideoAskStrategy(
       {
         clientID: 'ABC123',
         clientSecret: 'secret',
-        scope: [ 'accounts:read' ]
+        scope: [ 'profile' ]
       },
       function () { }
     )
@@ -118,11 +118,11 @@ describe('Strategy#userProfile', function () {
   }) // error caused by invalid token
 
   describe('error caused by malformed response', function () {
-    var strategy = new TypeformStrategy(
+    var strategy = new VideoAskStrategy(
       {
         clientID: 'ABC123',
         clientSecret: 'secret',
-        scope: [ 'accounts:read' ]
+        scope: [ 'profile' ]
       },
       function () { }
     )
@@ -148,11 +148,11 @@ describe('Strategy#userProfile', function () {
   }) // error caused by malformed response
 
   describe('internal error', function () {
-    var strategy = new TypeformStrategy(
+    var strategy = new VideoAskStrategy(
       {
         clientID: 'ABC123',
         clientSecret: 'secret',
-        scope: [ 'accounts:read' ]
+        scope: [ 'profile' ]
       },
       function () { }
     )

@@ -15,13 +15,13 @@ describe('Strategy', function () {
       {
         clientID: 'ABC123',
         clientSecret: 'secret',
-        scope: ['accounts:read']
+        scope: ['profile']
       },
       function () {}
     )
 
-    it('should be named typeform', function () {
-      expect(strategy.name).to.equal('typeform')
+    it('should be named videoask', function () {
+      expect(strategy.name).to.equal('videoask')
     })
   })
 
