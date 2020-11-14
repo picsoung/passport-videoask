@@ -1,5 +1,5 @@
-# passport-typeform
-[![Build Status](https://travis-ci.com/anabellaspinelli/passport-typeform.svg?branch=master)](https://travis-ci.com/anabellaspinelli/passport-typeform)
+# passport-videoask
+[![Build Status](https://travis-ci.com/picsoung/passport-videoask.svg?branch=master)](https://travis-ci.com/picsoung/passport-videoask)
 
 [Passport](http://passportjs.org/) strategy for authenticating with [Typeform](https://www.typeform.com/)
 using the OAuth 2.0 API.
@@ -13,14 +13,14 @@ unobtrusively integrated into any application or framework that supports
 ## Install
 
 ```bash
-$ npm install passport-typeform
+$ npm install passport-videoask
 ```
 
 ## Usage
 
 #### Create an Application
 
-Before using `passport-typeform`, you must register an application with Typeform.
+Before using `passport-videoask`, you must register an application with Typeform.
 If you have not already done so, a new application can be created at
 [applications](https://admin.typeform.com/account#/section/apps) within
 Typeforms's account settings. Your application will be issued a client ID and client
